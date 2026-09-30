@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to @konnect_kashmir</title>
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #1da1f2;
+      --primary-hover: #0c85d0;
+      --accent-gradient: linear-gradient(135deg, #1da1f2 0%, #00d2ff 100%);
+      --bg-dark: #0f172a;
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --card-border: rgba(255, 255, 255, 0.5);
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #0f172a url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeaCVXg0-QGOocrEVsyr_iuS6UHmxGi34nHWddg3Xxk_-a41vynkfx_gY2&s=10') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.68);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: -1;
+    }
+
+    /* Top Navigation Bar with Direct Login Control */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-brand {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .btn-login {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-login:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Container Card */
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 40px;
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Header Title */
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 2.2rem;
+      font-weight: 800;
+    }
+
+    h1 a {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
+    }
+
+    /* Banner Container */
+    .banner-container {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      margin-bottom: 30px;
+    }
+
+    .banner-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .banner-container:hover img {
+      transform: scale(1.03);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 15px;
+    }
+
+    .intro-text {
+      font-size: 1.05rem;
+      color: #334155;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    /* Animated CSS Border Gradient Effect */
+    @keyframes borderGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .animated-border-card {
+      position: relative;
+      border-radius: 18px;
+      padding: 3px; /* Border thickness */
+      background: linear-gradient(90deg, #1da1f2, #00d2ff, #7928ca, #1da1f2);
+      background-size: 300% 300%;
+      animation: borderGlow 6s ease infinite;
+      margin-top: 25px;
+    }
+
+    .animated-border-card .card-inner {
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 24px;
+    }
+
+    /* Standard Card Variants */
+    .section-card {
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 25px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .section-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-style-showcase {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+    }
+
+    .card-style-gradient {
+      background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+      border: 1px solid #cbd5e1;
+    }
+
+    .section-card h3, .card-inner h3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .tweet-wrapper {
+      margin: 15px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Live Feed Embedded Container */
+    .feed-container {
+      max-height: 500px;
+      overflow-y: auto;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      padding: 10px;
+      background: #fafafa;
+    }
+
+    .media-box {
+      margin: 15px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+
+    .media-box img {
+      width: 100%;
+      max-height: 380px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Login Modal Overlay */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(6px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      width: 100%;
+      max-width: 400px;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    .modal-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 12px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    footer {
+      margin-top: auto;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(10px);
+      color: #94a3b8;
+      text-align: center;
+      padding: 25px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar with Integrated Login Trigger -->
+  <nav class="navbar">
+    <a href="#" class="nav-brand">
+      <i class="fa-brands fa-x-twitter" style="color: var(--primary);"></i>
+      Konnect Kashmir
+    </a>
+    <button class="btn-login" onclick="toggleModal(true)">
+      <i class="fa-brands fa-x-twitter"></i> Sign in to X
+    </button>
+  </nav>
+
+  <div class="container">
+    <h1>
+      Welcome to <a href="https://twitter.com/konnect_kashmir" target="_blank">@konnect_kashmir</a>
+    </h1>
+
+    <div class="banner-container">
+      <img src="https://pbs.twimg.com/profile_banners/1560169308676042752/1775282545/1500x500" alt="Konnect Kashmir Banner">
+    </div>
+
+    <h2>Connecting Voices Across the Valley</h2>
+
+    <p class="intro-text">
+      <strong>@konnect_kashmir</strong> is your digital gateway to authentic stories, news, culture, and community insights straight from Jammu & Kashmir.
+    </p>
+
+    <!-- Card 1: Animated Gradient Border & Single Embedded Tweet -->
+    <div class="animated-border-card">
+      <div class="card-inner">
+        <h3>
+          <i class="fa-solid fa-star" style="color: var(--primary);"></i>
+          Featured Post
+        </h3>
+
+        <div class="tweet-wrapper">
+          <blockquote class="twitter-tweet" data-theme="light">
+            <a href="https://x.com/konnect_kashmir/status/2095025605838524459"></a>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Interactive In-Page Timeline Feed -->
+    <div class="section-card card-style-showcase">
+      <h3>
+        <i class="fa-solid fa-rss" style="color: var(--primary);"></i>
+        Live Stream from Kashmir
+      </h3>
+
+      <div class="feed-container">
+        <a class="twitter-timeline" data-height="450" href="https://twitter.com/konnect_kashmir?ref_src=twsrc%5Etfw">
+          Loading Live Tweets...
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 3: Media Showcase Block -->
+    <div class="section-card card-style-showcase">
+      <h3>
+        <i class="fa-solid fa-camera-retro" style="color: var(--primary);"></i>
+        Visual Highlights
+      </h3>
+
+      <div class="media-box">
+        <img src="https://pbs.twimg.com/media/HRMGUVwbsAAqFJG?format=jpg&name=small" alt="Kashmir Scenic Highlight">
+      </div>
+    </div>
+
+    <!-- Card 4: Action Block -->
+    <div class="section-card card-style-gradient">
+      <h3>
+        <i class="fa-solid fa-paper-plane" style="color: var(--primary);"></i>
+        Get Involved
+      </h3>
+      <p>
+        Have a story or photograph to share? Tag <strong>@konnect_kashmir</strong> or sign in to engage directly from this page.
+      </p>
+    </div>
+  </div>
+
+  <!-- In-Page X Login Modal Simulation -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-card">
+      <span class="modal-close" onclick="toggleModal(false)"><i class="fa-solid fa-xmark"></i></span>
+      <h3>Sign in to X</h3>
+      <form onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label>Phone, email, or username</label>
+          <input type="text" required placeholder="Enter username or email">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" required placeholder="Enter password">
+        </div>
+        <button type="submit" class="btn-submit">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 @konnect_kashmir. All rights reserved.</p>
+  </footer>
+
+  <!-- Twitter Embed Widget Script -->
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  <!-- Interactive JavaScript Logic -->
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('loginModal');
+      modal.style.display = show ? 'flex' : 'none';
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      alert('Login simulated successfully! You can now browse and interact with tweets inline.');
+      toggleModal(false);
+    }
+  </script>
+
+</body>
+</html>
