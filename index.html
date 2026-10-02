@@ -144,16 +144,16 @@
 	
 	.hihi a{
 	 width:auto;
-	 font-size:1.1rem;
+	 font-size:1.2rem;
 	 color:blue;
 	 float:left; 
 	}
-	 .hihi:hover{
-	  color:red;
+	 .hihi:hover a{
+	  color:red
 	
 	}
-	 .hihi:active{
-	   color:yellow;
+	 .hihi:active a{
+	   color:#954d4d;
 	}
     .banner-container img {
       width: 100%;
@@ -246,12 +246,17 @@
 
     /* Live Feed Embedded Container */
     .feed-container {
-      max-height: 500px;
-      overflow-y: auto;
+      max-height: 150px;
+	  width:300px;
+      overflow-y: hiden;
       border-radius: 12px;
-      border: 1px solid #e2e8f0;
+      border: 1px solid grey;
       padding: 10px;
-      background: #fafafa;
+      background: #fff111;
+	  font-size: 1.7rem;
+	  }
+	  feed-container a{
+	  color:white;
     }
 
     .media-box {
@@ -355,6 +360,7 @@
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       font-size: 0.9rem;
     }
+
   </style>
 </head>
 <body>
@@ -363,7 +369,7 @@
   <nav class="navbar">
     <a href="#" class="nav-brand">
       <i class="fa-brands fa-x-twitter" style="color: var(--primary);"></i>
-      Konnect Kashmir
+		KONNECT MAGAZINE 
     </a>
     <button class="btn-login" onclick="toggleModal(true)">
       <i class="fa-brands fa-x-twitter"></i> Sign in to X
@@ -372,34 +378,36 @@
 
   <div class="container">
     <h1>
-      Welcome to <a href="https://twitter.com/konnect_kashmir" target="_blank">@konnect_kashmir</a>
+      Welcome(سواگت) to <a href="https://twitter.com/konnect_kashmir" target="_blank">@konnect_kashmir</a>
     </h1>
 
     <div class="banner-container">
 <img src="https://pbs.twimg.com/profile_banners/1560169308676042752/1775282545/1500x500" alt="Konnect Kashmir Banner"></div><br>
 	   <div class="hihi">	
 	   <img src="https://lh3.googleusercontent.com/d/14zVLUl2yJHFh_CWm6UoHrlD0AtHLEgBo" width="300" height="100" style="border-radius:10px"><br>
-       <a href="https://konnectmagazine.github.io/NORTH-WEST-COMMAND/index.html" style="font-weight:45px">CLICK HERE TO READ MAGAZINE<a>
+       <a href="https://konnectmagazine.github.io/NORTH-WEST-COMMAND/index.html" style="font-weight:45px">CLICK HERE TO READ MAGAZINE</a>
 	 </div>
 
     <h2>Connecting Voices Across the Valley</h2>
 
     <div class="intro-text">
-	<p class="l">
-      <strong>@konnect_kashmir</strong> is your digital gateway to authentic stories, news, culture, and community insights straight from Jammu & Kashmir.
-    </p>
+	<p style="color:black">
+     <b> <strong>@konnect_kashmir</strong>"Where snow-covered valleys shape nature’s beautiful views,
+
+The sincere people there win hearts with their hospitality and simplicity."<br> جہاں برف پوش وادیاں قدرت کے حسیں نظارے سنوارتی ہیں، <br>وہاں کے پُرخلوص لوگ اپنی مہمان نوازی اور سادگی سے دل جیت لیتے ہیں۔
+    </p></b>
 	</div>
     <!-- Card 1: Animated Gradient Border & Single Embedded Tweet -->
     <div class="animated-border-card">
       <div class="card-inner">
         <h3>
           <i class="fa-solid fa-star" style="color: var(--primary);"></i>
-          Featured Post
+		MAGAZINE POSTED ON TWITTER PAGE AS ⏬
         </h3>
 
         <div class="tweet-wrapper">
           <blockquote class="twitter-tweet" data-theme="light">
-            <a href="https://x.com/konnect_kashmir/status/2095025605838524459"></a>
+            <a href="https://x.com/konnect_kashmir/status/2096984550530502781"></a>
           </blockquote>
         </div>
       </div>
@@ -409,12 +417,12 @@
     <div class="section-card card-style-showcase">
       <h3>
         <i class="fa-solid fa-rss" style="color: var(--primary);"></i>
-        Live Stream from Kashmir
+        Watch Us On Twitter (click below)
       </h3>
 
       <div class="feed-container">
-        <a class="twitter-timeline" data-height="450" href="https://twitter.com/konnect_kashmir?ref_src=twsrc%5Etfw">
-          Loading Live Tweets...
+        <a  data-height="450" href="https://twitter.com/konnect_kashmir?ref_src=twsrc%5Etfw">
+			@konnect_kashmir
         </a>
       </div>
     </div>
@@ -423,8 +431,7 @@
     <div class="section-card card-style-showcase">
       <h3>
         <i class="fa-solid fa-camera-retro" style="color: var(--primary);"></i>
-        Visual Highlights
-      </h3>
+           </h3>
 
       <div class="media-box">
         <img src="https://pbs.twimg.com/media/HRMGUVwbsAAqFJG?format=jpg&name=small" alt="Kashmir Scenic Highlight">
@@ -438,7 +445,7 @@
         Get Involved
       </h3>
       <p>
-        Have a story or photograph to share? Tag <strong>@konnect_kashmir</strong> or sign in to engage directly from this page.
+      Tag <strong>@konnect_kashmir</strong> to share your thoughts and innovations or sign in to engage directly from this page.
       </p>
     </div>
   </div>
